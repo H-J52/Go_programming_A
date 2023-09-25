@@ -9,10 +9,14 @@ import (
 
 func main() {
 	fmt.Print("Input score : ")
-	reader := bufio.NewReader(os.Stdin)        //메모리 번지 수를 reader가 가진다?
-	inputScore, err := reader.ReadString('\n') //option 2
+	reader := bufio.NewReader(os.Stdin)
+	inputScore, err := reader.ReadString('\n')
 	if err != nil {
-		log.Fatal(err) //오류 로그 찍고 종료
+		log.Fatal(err)
 	}
-	fmt.Println(inputScore)
+	if inputScore >= 90 { //mismatched types string and untyped int
+		grade := "A Grade!"
+	} else {
+		grade := "B, C, D, E Grade"
+	}
 }
