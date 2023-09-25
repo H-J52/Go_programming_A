@@ -5,18 +5,26 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
 	fmt.Print("Input score : ")
 	reader := bufio.NewReader(os.Stdin)
-	inputScore, err := reader.ReadString('\n')
+	inputScoreString, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
-	if inputScore >= 90 { //mismatched types string and untyped int
+
+	inputScoreString = strings.TrimSpace(inputScoreString)      //remove space bar
+	inputScore, err := strconv.ParseFloat(inputScoreString, 64) //casting
+
+	if inputScore >= 90 {
 		grade := "A Grade!"
 	} else {
 		grade := "B, C, D, E Grade"
 	}
+
+	fmt.Println("You got " + grade)
 }
