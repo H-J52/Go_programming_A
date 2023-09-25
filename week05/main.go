@@ -20,10 +20,11 @@ func main() {
 	inputScoreString = strings.TrimSpace(inputScoreString)      //remove space bar
 	inputScore, err := strconv.ParseFloat(inputScoreString, 64) //casting
 
+	var grade string
 	if inputScore >= 90 {
-		grade := "A Grade!"
+		grade = "A Grade!"
 	} else {
-		grade := "B, C, D, E Grade"
+		grade = "B, C, D, F Grade"
 	}
 
 	fmt.Println("You got " + grade)
