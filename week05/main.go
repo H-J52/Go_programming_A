@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fmt.Print("Input score : ")
-	reader := bufio.NewReader(os.Stdin)        //메모리 번지 수를 reader가 가진다?
-	inputScore, err := reader.ReadString('\n') //err declared and not used
+	reader := bufio.NewReader(os.Stdin)      //메모리 번지 수를 reader가 가진다?
+	inputScore, _ := reader.ReadString('\n') //option 1
 	fmt.Println(inputScore)
 }
