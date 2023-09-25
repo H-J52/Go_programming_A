@@ -7,36 +7,42 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
-	"strings" // 필요한 패키지 추가
+	"strings"
 	"time"
 )
 
 func main() {
 	rand.Seed(time.Now().Unix()) // 올바른 시간 시드 설정
-	answer := rand.Intn(100) + 1 // (1 ~ 100) 사이의 난수 생성
+
 	fmt.Println("Guess Number Game!")
 
-	reader := bufio.NewReader(os.Stdin)
+	for {
+		answer := rand.Intn(100) + 1 // (1 ~ 100) 사이의 난수 생성
+		fmt.Println("I'm thinking of a number between 1 and 100. Can you guess it?")
 
-	fmt.Println("Input guess number : ")
-	inputNumberString, err := reader.ReadString('\n')
+		reader := bufio.NewReader(os.Stdin)
 
-	if err != nil {
-		log.Fatal(err)
-	}
+		fmt.Println("Input your guess: ")
+		inputNumberString, err := reader.ReadString('\n')
 
-	inputNumberString = strings.TrimSpace(inputNumberString) // 올바른 변수 이름 사용
-	inputNumber, err := strconv.Atoi(inputNumberString)
+		if err != nil {
+			log.Fatal(err)
+		}
 
-	if err != nil {
-		log.Fatal(err)
-	}
+		inputNumberString = strings.TrimSpace(inputNumberString)
+		inputNumber, err := strconv.Atoi(inputNumberString)
 
-	if inputNumber < answer {
-		fmt.Println("Guess number is lower than answer") // 정답보다 입력한 숫자가 작음
-	} else if inputNumber > answer {
-		fmt.Println("Guess number is higher than answer") // 정답보다 입력한 숫자가 큼
-	} else {
-		fmt.Println("Congratulations! You guessed it!") // 정답을 맞춤
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		if inputNumber < answer {
+			fmt.Println("Your guess is too low.")
+		} else if inputNumber > answer {
+			fmt.Println("Your guess is too high.")
+		} else {
+			fmt.Println("Congratulations! You guessed it!")
+			break // 정답을 맞췄으므로 반복문 종료
+		}
 	}
 }
