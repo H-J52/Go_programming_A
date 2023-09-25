@@ -24,7 +24,7 @@ func main() {
 	if inputScore >= 90 {
 		grade = "A Grade!"
 	} else {
-		grade = "B, C, D, F Grade"
+		grade = "Under A Grade"
 	}
 
 	fmt.Println("You got " + grade)
