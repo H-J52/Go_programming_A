@@ -2,12 +2,11 @@ package main
 
 import "fmt"
 
-func double(n *int) {
-	*n = *n * 2
-}
-
 func main() {
-	var a int = 0
-	double(&a)
-	fmt.Println(a)
+
+	a := 10
+	var pa *int = &a
+	fmt.Printf("%T %T\n", &a, pa)
+	fmt.Printf("%x %x %x\n", &a, pa, &pa)
+	fmt.Println(&a, pa, &pa)
 }
