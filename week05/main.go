@@ -16,10 +16,11 @@ func main() {
 
 	fmt.Println("Guess Number Game!")
 
-	for {
-		answer := rand.Intn(100) + 1 // (1 ~ 100) 사이의 난수 생성
-		fmt.Println("I'm thinking of a number between 1 and 100. Can you guess it?")
+	answer := rand.Intn(100) + 1 // (1 ~ 100) 사이의 난수 생성
+	fmt.Println("I'm thinking of a number between 1 and 100. Can you guess it?")
+	fmt.Println(answer)
 
+	for {
 		reader := bufio.NewReader(os.Stdin)
 
 		fmt.Println("Input your guess: ")
@@ -37,9 +38,9 @@ func main() {
 		}
 
 		if inputNumber < answer {
-			fmt.Println("Your guess is too low.")
+			fmt.Println("답보다 숫자가 낮습니다.")
 		} else if inputNumber > answer {
-			fmt.Println("Your guess is too high.")
+			fmt.Println("답보다 숫자가 높습니다.")
 		} else {
 			fmt.Println("Congratulations! You guessed it!")
 			break // 정답을 맞췄으므로 반복문 종료

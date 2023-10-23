@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"reflect"
+	"strings"
 )
 
 func main() {
@@ -24,13 +26,14 @@ func main() {
 	fmt.Println(j, g, h, i)
 	fmt.Println(a, reflect.TypeOf(a), b, reflect.TypeOf(b), c, reflect.TypeOf(c), d, reflect.TypeOf(d), e, reflect.TypeOf(e), f, reflect.TypeOf(f))
 
-	//fmt.Println(reflect.TypeOf('김'))
-	//fmt.Println(reflect.TypeOf(99))
-	//fmt.Println(reflect.TypeOf(2.7))
-	//fmt.Println(reflect.TypeOf(false))
-	//fmt.Println(reflect.TypeOf("Go!"))
-	//fmt.Println('A', 'a', '0', '김') // 65 97 48 44608
-	//fmt.Println(math.Ceil(3.17))
-	//fmt.Println(math.Floor(3.17))
-	//fmt.Println(strings.Title("open source programming"))
+	fmt.Println(reflect.TypeOf('김'))
+	fmt.Println(reflect.TypeOf(99))
+	fmt.Println(reflect.TypeOf(2.7))
+	fmt.Println(reflect.TypeOf(false))
+	fmt.Println(reflect.TypeOf("Go!"))
+	fmt.Println('A', 'a', '0', '김') // 65 97 48 44608
+	fmt.Println(math.Ceil(3.17))
+	fmt.Println(math.Floor(3.17))
+	fmt.Println(math.Round(3.17)) //반올림
+	fmt.Println(strings.Title("open source programming"))
 }
