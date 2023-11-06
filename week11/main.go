@@ -22,8 +22,13 @@ func main() {
 
 	i := 0
 
-	for i < 4 {
-		fmt.Println(primes[i]) //panic: runtime error: index out of range [3] with length 3
+	// for i < 4 {  //panic: runtime error: index out of range [3] with length 3
+	for i < len(primes) {
+		fmt.Println(primes[i])
 		i++
+	}
+
+	for _, prime := range primes { //값만 출력할려했으나 인덱스가 출력됨.
+		fmt.Println(prime)
 	}
 }
