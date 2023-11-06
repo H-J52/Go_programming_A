@@ -17,4 +17,13 @@ func main() {
 
 	test := [5]bool{true, true, true}
 	fmt.Println(test[3]) //bool의 제로값은 false
+
+	// fmt.Println(primes[4]) //invalid argument: index 4 out of bounds [0:3]
+
+	i := 0
+
+	for i < 4 {
+		fmt.Println(primes[i]) //panic: runtime error: index out of range [3] with length 3
+		i++
+	}
 }
