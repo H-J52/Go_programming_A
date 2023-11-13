@@ -28,5 +28,8 @@ func main() {
 
 	test := [3]string{"inha", "go", "student"} //배열 리터럴을 이용해서 test 배열 생성
 	testS := test[0:2]
+	testS2 := test[1:]
+	testS2[0] = "python"
+	fmt.Println(testS2)
 	fmt.Println(testS, len(testS))
 }
