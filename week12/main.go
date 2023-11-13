@@ -25,4 +25,8 @@ func main() {
 	for _, value := range copyS {
 		fmt.Println(value)
 	}
+
+	test := [3]string{"inha", "go", "student"} //배열 리터럴을 이용해서 test 배열 생성
+	testS := test[0:2]
+	fmt.Println(testS, len(testS))
 }
