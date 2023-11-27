@@ -8,14 +8,20 @@ func main() {
 	// var games map[int]string
 	// games = make(map[int]string)
 
-	games := make(map[int]string)
+	games := map[int]string{ //map literal
 
-	games[456] = "정기훈"
-	games[218] = "박해수"
-	games[067] = "강새벽"
-	games[001] = "오일남"
-	games[199] = "알리"
-	games[101] = "아이오아이"
+		456: "정기훈",
+		218: "박해수",
+		67:  "강새벽",
+		1:   "오일남",
+		199: "알리",
+		101: "아이오아이",
+	}
+
+	// fmt.Println(games[100])
+
+	name, ok := games[101] //존재하면 True 아니면 False
+	fmt.Println(name, ok)
 
 	for _, v := range games {
 		fmt.Println(v)
